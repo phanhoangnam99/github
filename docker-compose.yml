@@ -1,21 +1,7 @@
 version: '3'
 services:
-  mysql_db:
-    image: mysql
-    container_name: mysql_db
-    env_file: .env
-    environment:
-      - MYSQL_ROOT_PASSWORD=1234
-      - MYSQL_DATABASE=db_food
-    ports:
-      - 3306:3306
-    volumes:
-      - mysql_db:/var/lib/mysql
-    networks:
-      - node-network
+  
   app:
-    depends_on:
-      - mysql_db
     build: .
     container_name: cons-node
     env_file: .env
@@ -30,8 +16,6 @@ services:
       - "80:8080"
     networks:
       - node-network
-volumes:
-  mysql_db:
-    driver: local
+
 networks:
   node-network:
