@@ -13,7 +13,6 @@ app.listen(8080, () => { })
 
 app.get('/', (req, res) => {
     let findProxyForURL = () => {
-        
         return "PROXY 192.168.82.185:10809"
     }
 
