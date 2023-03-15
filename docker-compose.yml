@@ -10,7 +10,7 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - mysql_db:/var/lib/mysql
+      - /var/lib/mysql
     networks:
       - node-network
   app:
